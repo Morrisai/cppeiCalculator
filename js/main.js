@@ -1,6 +1,7 @@
 $( document ).ready( function(){
 
 		var cppMaxEarning = 52500;
+		var cppExemptAmount = 3500;
 		var eiMaxEarning = 48600;
 		var cppPerc =  0.0495;
 		var eiPerc = 0.0192;
@@ -16,10 +17,13 @@ $( document ).ready( function(){
 		$("#submitButton").click(function(e){
 			e.preventDefault();
 			var compensation = parseInt($("#compensationInput").val().replace(/,/g, ''));
+
+			compensation = isNaN(compensation) ? 0 : compensation;
+		
 			var numPays = parseInt($("#numPaysSelect").val());
 
 			var amountPerPay= compensation / numPays;
-			var resultCPP =   cppMaxEarning / amountPerPay;
+			var resultCPP =   (cppMaxEarning-cppExemptAmount) / amountPerPay;
 			var resultEI =  eiMaxEarning / amountPerPay;
 
 			var weeksOfPayCPP = Math.round(resultCPP*payPeriods[$("#numPaysSelect")[0].selectedIndex]);
@@ -55,7 +59,7 @@ $( document ).ready( function(){
 			
 			$("#results").css("visibility","visible");
 
-			console.log(date('2 weeks from jan 1st'));
+			ga('send', 'submitClick');
 
 
 		});
