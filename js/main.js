@@ -9,15 +9,27 @@ $( document ).ready( function(){
 		var jan1 = new Date(2014, 00, 01);
 		var day  = moment(new Date (date('16 weeks',jan1))).format("MMMM Do") ;
 
-		var payPeriods = [4, 2,2, 1];
+		var payPeriods = [4, 2, 2, 1];
 
 		
 	
 
 		$("#submitButton").click(function(e){
 			e.preventDefault();
+
+			var ytd =  parseInt($("#ytdInput").val().replace(/,/g, ''));
+
+
 			var compensation = parseInt($("#compensationInput").val().replace(/,/g, ''));
 
+			//console.log(compensation);
+			if(isNaN(compensation)){
+				var dayOfYear = moment().dayOfYear();
+
+				compensation = 365/dayOfYear * ytd;
+
+				
+			}
 			compensation = isNaN(compensation) ? 0 : compensation;
 		
 			var numPays = parseInt($("#numPaysSelect").val());
@@ -59,27 +71,32 @@ $( document ).ready( function(){
 			
 			$("#results").css("visibility","visible");
 
-			ga('send', 'submitClick');
+			ga('send', 'submitClick',numPays);
 
 
 		});
-
+		
+		
 
 		function nth(d) {
 
 			var suffix;
 
 		  if(d>3 && d<21) suffix= 'th'; // thanks kennebec
+
 		  switch (d % 10) {
 		        case 1:  suffix= "st" 
 		        break;
 		        case 2:  suffix = "nd"
-		         break;;
+		         break;
 		        case 3:  suffix= "rd"
-		         break;;
+		         break;
 		        default: suffix= "th"
 		         break;
 		    }
+		  if(d>10 && d<14){
+		  	suffix = suffix= "th"; 
+		  }
 		   
 		    return d+suffix;
 		} 

@@ -11,6 +11,19 @@ body {
 
 #results{
 	visibility: hidden;
+  margin-bottom:200px;
+}
+.footnote{
+  font-size: 8pt;
+  vertical-align: super;
+}
+#footer {
+  position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
 }
 
 #footer container {
