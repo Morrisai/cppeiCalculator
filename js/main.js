@@ -71,7 +71,7 @@ $( document ).ready( function(){
 			
 			$("#results").css("visibility","visible");
 
-			ga('send', 'submitClick',numPays);
+			ga('send','event', 'submitClick',numPays,"Number of pays per year");
 
 
 		});
