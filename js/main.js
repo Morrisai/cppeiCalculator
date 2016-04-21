@@ -1,12 +1,12 @@
 $( document ).ready( function(){
 
-		var cppMaxEarning = 52500;
+		var cppMaxEarning = 54900;
 		var cppExemptAmount = 3500;
-		var eiMaxEarning = 48600;
+		var eiMaxEarning = 50800;
 		var cppPerc =  0.0495;
 		var eiPerc = 0.0192;
 
-		var jan1 = new Date(2014, 00, 01);
+		var jan1 = new Date(2016, 00, 01);
 		var day  = moment(new Date (date('16 weeks',jan1))).format("MMMM Do") ;
 
 		var payPeriods = [4, 2, 2, 1];
