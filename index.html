@@ -100,6 +100,24 @@
 		    </select>
 		  </div>
 		</div>
+
+		<!-- Date Range Input-->
+		<div class="seasonal-options">
+			<div class="form-group seasons-group">
+				<label class="col-md-4 control-label" for="textinput">Seasons:</label>  
+				<div class="col-md-4">
+					<div class="input-group">
+						<input type="text" class="date-range form-control" name="daterange" value="01/01/2016 - 12/31/2016" />
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default add-season-btn">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
 		
 		<div class="form-group">
 			<h3 >Use Year to date earned to predict instead</h3>
@@ -170,7 +188,20 @@
       </div>
     </div>
 
-
+<script type="template" id="seasonGroupTemplate">
+	<div class="form-group seasons-group">
+		<div class="col-md-4 col-md-push-4">
+			<div class="input-group">
+				<input type="text" class="date-range form-control" name="daterange" value="01/01/2016 - 12/31/2016" />
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default remove-season-btn">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
 
 
 <script>

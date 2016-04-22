@@ -75,7 +75,21 @@ $( document ).ready( function(){
 
 
 		});
+
+		var seasonGroupTemplate = $('#seasonGroupTemplate').html();
 		
+		$('.date-range').daterangepicker();
+
+		$('.add-season-btn').click(function () {
+			var seasonFragment = $(seasonGroupTemplate);
+			seasonFragment.find('.date-range').daterangepicker();;
+			$('.seasonal-options').append(seasonFragment);
+			return false;
+		});
+
+		$('.seasonal-options').click('.remove-season-btn', function (e) {
+			$(e.target).closest('.seasons-group').remove();
+		});
 		
 
 		function nth(d) {
