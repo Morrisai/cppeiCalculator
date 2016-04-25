@@ -36,7 +36,7 @@ $( document ).ready( function(){
 			var ytd =  parseInt($("#ytdInput").val().replace(/[^0-9.]/g, ''));
 
 
-			var compensation = parseInt($("#compensationInput").val().replace(/,/g, ''));
+			var compensation = parseInt($("#compensationInput").val().replace(/[^0-9.]/g, ''));
 
 			//console.log(compensation);
 			if(isNaN(compensation)){
