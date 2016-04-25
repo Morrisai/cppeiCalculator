@@ -14,7 +14,6 @@ body {
 }
 #results{
 	visibility: hidden;
-  margin-bottom:100px;
 }
 .footnote{
   font-size: 8pt;
@@ -31,6 +30,9 @@ body {
 
 .seasons-group .input-group-btn .glyphicon{
   line-height: 1.5;
+}
+.form-horizontal .control-label{
+font-size: 14px;
 }
 
 h1,h2,h3,h4,h5,h6{
