@@ -8,6 +8,9 @@ body {
     text-align: center;
 
 }
+.jumbotron{
+  width: 100%;
+}
 
 .container{
       padding-bottom: 90px;
@@ -25,14 +28,21 @@ body {
    bottom:0px;
    height:30px;
    width:100%;
-   background:#999;
+   background:#111111;
 }
 
 .seasons-group .input-group-btn .glyphicon{
   line-height: 1.5;
 }
-.form-horizontal .control-label{
+.form-horizontal{
+  margin-top:25px;
+}
+
+.form-horizontal .control-label {
+
 font-size: 14px;
+
+font-weight: normal;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -49,6 +59,7 @@ h2{
         width:auto;
         margin: 0 auto 0 auto;
         text-align: center;
+        background: 
       }
  #footer .credit {
     margin: 20px 0;
@@ -74,9 +85,7 @@ h2{
       #footer {
         height: 60px;
       }
-      #footer {
-        background-color: #aaaaaa;
-      }
+      
 
 
 
