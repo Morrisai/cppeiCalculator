@@ -29,6 +29,9 @@ body {
    background:#999;
 }
 
+.seasons-group .input-group-btn .glyphicon{
+  line-height: 1.5;
+}
 
 h1,h2,h3,h4,h5,h6{
 
