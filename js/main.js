@@ -33,7 +33,7 @@ $( document ).ready( function(){
 				return;
 			}
 
-			var ytd =  parseInt($("#ytdInput").val().replace(/,/g, ''));
+			var ytd =  parseInt($("#ytdInput").val().replace(/[^0-9.]/g, ''));
 
 
 			var compensation = parseInt($("#compensationInput").val().replace(/,/g, ''));
