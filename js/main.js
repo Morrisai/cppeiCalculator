@@ -91,14 +91,20 @@ $( document ).ready( function(){
 			} else {
 				var cppPay= Math.round(amountPerPay*cppPerc);
 				var eiPay =  Math.round(amountPerPay*eiPerc);
-				var totalExtra = cppPay + eiPay;
-				var response = "Your CPP contribution is $" + cppPay + " per pay and your EI contribution is $" +eiPay + ". " + 
 
-				"<br/><br/>You should max out your CPP Contributions on your " + nth(Math.ceil(resultCPP))+ " pay. "+
-				"<br/>You should max out your EI Contributions on your " + nth(Math.ceil(resultEI))+ " pay. ";
+				var payDayCpp = Math.ceil(resultCPP);
+				var payDayEi = Math.ceil(resultEI);
+
+				var totalExtra = cppPay + eiPay;
+				var totalExtraInYear = Math.round(( numPays -  ( (payDayCpp+payDayEi) / 2 ) )*  totalExtra);
+
+				var response = "Your CPP contribution is <b>$" + cppPay + "</b> per pay and your EI contribution is <b>$" +eiPay + "</b>. " + 
+
+				"<br/><br/>You should max out your CPP Contributions on your " + nth(payDayCpp)+ " pay. "+
+				"<br/>You should max out your EI Contributions on your " + nth(payDayEi)+ " pay. ";
 
 				if (dayCpp && dayEI) {
-					response += "<br/><br/>Very very roughly this means " +dayCpp.format("MMMM Do") + " for CPP and " + dayEI.format("MMMM Do")+ " for EI. <br /> <br /> <br /> This means an extra <b>$"+totalExtra+"</b> per pay! "
+					response += "<br/><br/>Very very roughly this means " +dayCpp.format("MMMM Do") + " for CPP and " + dayEI.format("MMMM Do")+ " for EI. <br /> <br /> <br /> This means an extra <b>$"+totalExtra+"</b> per pay or approximately an extra <b>$"+totalExtraInYear+"</b> over the rest of the year!"
 				} else {
 					response += "<br/><br/>";
 					if (!dayCpp && !dayEI) {
