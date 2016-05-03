@@ -83,6 +83,14 @@ h2{
     margin: 20px 0;
   }
 
+
+.form-horizontal .form-group {
+     margin-left: 0px; 
+     margin-right: 0px; 
+
+}
+
+
  html,
       body {
         height: 100%;
@@ -113,10 +121,10 @@ h2{
           height: 80px;
           margin-top:60px;
 
-          margin-left: -20px;
+          /*margin-left: -20px;
           margin-right: -20px;
           padding-left: 20px;
-          padding-right: 20px;
+          padding-right: 20px;*/
         }
       }
 
