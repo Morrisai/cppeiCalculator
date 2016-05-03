@@ -11,6 +11,9 @@ body {
 .jumbotron{
   width: 100%;
 }
+.jumbotron p {
+  font-size: 14px;
+}
 
 .container{
       padding-bottom: 90px;
@@ -51,8 +54,23 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h2{
-  font-size:42px;
+  font-size:20px;
 
+}
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.jumbotron h1{
+  font-size:40px;
+
+}
+.jumbotron p {
+    margin-bottom: 10px;
+   
+    /*font-weight: 200;*/
 }
 
 #footer container {
