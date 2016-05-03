@@ -23,8 +23,6 @@ $( document ).ready( function(){
 
 		var payPeriods = [4, 2, 2, 1];
 
-		
-	
 
 		$("#submitButton").click(function(e){
 			e.preventDefault();
@@ -91,14 +89,16 @@ $( document ).ready( function(){
 
 					$("#results").addClass("alert alert-danger");
 			} else {
-
-				var response = "Your CPP contribution is $" + Math.round(amountPerPay*cppPerc) + " per pay and your EI contribution is $" + Math.round(amountPerPay*eiPerc) + ". " + 
+				var cppPay= Math.round(amountPerPay*cppPerc);
+				var eiPay =  Math.round(amountPerPay*eiPerc);
+				var totalExtra = cppPay + eiPay;
+				var response = "Your CPP contribution is $" + cppPay + " per pay and your EI contribution is $" +eiPay + ". " + 
 
 				"<br/><br/>You should max out your CPP Contributions on your " + nth(Math.ceil(resultCPP))+ " pay. "+
 				"<br/>You should max out your EI Contributions on your " + nth(Math.ceil(resultEI))+ " pay. ";
 
 				if (dayCpp && dayEI) {
-					response += "<br/><br/>Very very roughly this means " +dayCpp.format("MMMM Do") + " for CPP and " + dayEI.format("MMMM Do")+ " for EI."
+					response += "<br/><br/>Very very roughly this means " +dayCpp.format("MMMM Do") + " for CPP and " + dayEI.format("MMMM Do")+ " for EI. <br /> <br /> <br /> This means an extra <b>$"+totalExtra+"</b> per pay! "
 				} else {
 					response += "<br/><br/>";
 					if (!dayCpp && !dayEI) {
@@ -111,11 +111,15 @@ $( document ).ready( function(){
 				}
 
 
+
+
 				$("#results").html(response);
 		}
 
-			
-			$("#results").css("visibility","visible");
+			$('html,body').animate({
+				scrollTop: $("#results").offset().top
+			});
+			$("#results").css("visibility", "visible");
 
 			ga('send','event', 'submitClick',numPays,"Number of pays per year");
 
