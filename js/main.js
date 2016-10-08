@@ -96,7 +96,7 @@ $( document ).ready( function(){
 				var payDayEi = Math.ceil(resultEI);
 
 				var totalExtra = cppPay + eiPay;
-				var totalExtraInYear = Math.round(( numPays -  ( (payDayCpp+payDayEi) / 2 ) )*  totalExtra);
+				var totalExtraInYear = Math.round(( numPays -  ( (resultCPP+resultEI) / 2 ) )*  totalExtra);
 
 				var response = "Your CPP contribution is <b>$" + cppPay + "</b> per pay and your EI contribution is <b>$" +eiPay + "</b>. " + 
 
