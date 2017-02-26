@@ -11,13 +11,13 @@ function getDateRanges() {
 
 $( document ).ready( function(){
 
-		var cppMaxEarning = 54900;
+		var cppMaxEarning = 55300;
 		var cppExemptAmount = 3500;
-		var eiMaxEarning = 50800;
+		var eiMaxEarning = 51300.00;
 		var cppPerc =  0.0495;
-		var eiPerc = 0.0192;
+		var eiPerc = 0.0163;
 
-		var year = 2016;
+		var year = 2017;
 		var jan1 = new Date(year, 00, 01);
 		var day  = moment(new Date (date('16 weeks',jan1))).format("MMMM Do") ;
 
