@@ -34,7 +34,7 @@ $( document ).ready( function(){
 		
 			var numPays = parseInt($("#numPaysSelect").val());
 
-			var amountPerPay= compensation / numPays;
+			var amountPerPay = compensation / numPays;
 			var resultCPP =   (cppMaxEarning-cppExemptAmount) / amountPerPay;
 			var resultEI =  eiMaxEarning / amountPerPay;
 
@@ -71,7 +71,7 @@ $( document ).ready( function(){
 			$(window).scrollTop($('#results').offset().top);
 			$("#results").css("visibility","visible");
 
-			ga('send','event', 'submitClick',numPays,"Number of pay periods per year");
+			ga('send','event', 'submitClick',"Number of pay periods per year", numPays);
 
 
 		});
