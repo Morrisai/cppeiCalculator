@@ -6,7 +6,7 @@
     "@material-ui/core": "^1.2.0",
     "moment": "^2.22.2",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.4.2",
     "react-ga": "^2.5.3",
     "react-google-ad": "^1.0.2",
     "react-scripts": "1.1.4"
