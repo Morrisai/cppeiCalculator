@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { Paper } from '@material-ui/core';
 
+import Model from '../model/model';
 
 
 
@@ -39,7 +40,7 @@ const styles = theme => ({
       }
   }
 });
-
+const format =  new Intl.NumberFormat().format;
 class Header extends React.Component {
     render () {          
 
@@ -57,12 +58,12 @@ class Header extends React.Component {
             Once you have reached the maximum contribution for the year you will see an increase on your net pay going forward as these deductions will no longer be applied.
             </Typography> <Typography gutterBottom className={classes.text}>
             For CPP, with few exceptions, every person over the age of 18, who works in Canada outside of Quebec and earns more than a minimum amount ($3,500 per year) must contribute to CPP.                
-            In 2018, the maximum amount for CPP is $55,900.00.
+            In {Model.year}, the maximum amount for CPP is ${format(Model.cppMaxEarning)}
             </Typography> <Typography gutterBottom className={classes.text}>
             Employment Insurance (EI) provides temporary financial assistance to unemployed Canadians who have lost their job through no fault of their own, while they look for work or upgrade their skills.
-            The maximum insurable earnings for EI for 2018 is $51,700.00.
+            The maximum insurable earnings for EI for {Model.year} is  ${format(Model.eiMaxEarning)}.
             </Typography>  <Typography variant="body2" gutterBottom className={classes.text}>
-        Use the calculator below to estimate the date that you will max out your CPP and EI payments in 2018.
+        Use the calculator below to estimate the date that you will max out your CPP and EI payments in {Model.year}.
         </Typography>
           </div>
             

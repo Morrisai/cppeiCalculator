@@ -39,6 +39,9 @@ const styles = theme =>( {
     button:{
         textAlign:'center'
     },
+    instructions:{
+        width:'100%'
+    },
     section:{
         marginTop:'2rem',
         maxWidth:'50%',
@@ -205,11 +208,11 @@ class Form extends React.Component{
            <div  className={classes.root}>           
             <section className={classes.section}>            
             <Typography variant="display2" gutterBottom  >Calculator</Typography>    
-            <Typography variant="body1">If you get paid a regular amount every so often and know how much you will make this year use the first field otherwise use Year To Date if you want to see how bonuses or other irregular payments affect the timing</Typography>
+            <Typography variant="body1" >If you get paid a regular amount every so often and know how much you will make this year use the first field otherwise use Year To Date if you want to see how bonuses or other irregular payments affect the timing</Typography>
             <Paper elevation={4} className={classes.paper}>
                 <form onSubmit={this.onSubmit}>
                     <Grid container spacing={24}>
-                        <Typography variant="body1"> Please enter EITHER your yearly salary OR your earnings to date</Typography>
+                        <Typography variant="body1" className={classes.instructions} > Please enter EITHER your yearly salary OR your earnings to date</Typography>
                         <Grid 
                             item xs={12} 
                             sm={6}  
