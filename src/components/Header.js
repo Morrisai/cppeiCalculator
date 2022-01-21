@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 import { withStyles } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
+import { Button, Paper } from '@material-ui/core';
 
 import Model from '../model/model';
 
@@ -19,9 +19,14 @@ const styles = theme => ({
         }
     
   },
+ 
+    button:{
+      textAlign:'center',
+      margin: '0 0 1rem 0',
+  },
   text:{
     color: theme.palette.primary.contrastText,
-    maxWidth:'50%',
+    maxWidth:'75%',
     margin: '1rem auto',
 
     "@media (max-width:500px)": {
@@ -53,7 +58,14 @@ class Header extends React.Component {
             <Typography variant="display3" gutterBottom className={classes.h1}>
                 When will I max out my CPP and EI contributions?
             </Typography>
+            <Button className={classes.button} size="small" variant="contained" href="#calculator">
+  Skip to calculator
+</Button>
+
           <div >
+          <Typography gutterBottom className={classes.text}>Have you ever wondered why part way through the year all of a sudden you stop paying EI and CPP premiums on each paycheque and instead just get to pocket that money? 
+             For some people it happens very early in the year and for some people it might happen near the end or not at all. Once you max out, you simply stop paying for those extra deductions and your pay cheque gets a nice little bump. 
+            </Typography>
             <Typography gutterBottom className={classes.text}>The Canadian government has set maximums on how much an invidual can contribute to the CPP (Canadian Pension Plan) and to EI (Employment Insurance). 
             Once you have reached the maximum contribution for the year you will see an increase on your net pay going forward as these deductions will no longer be applied.
             </Typography> <Typography gutterBottom className={classes.text}>

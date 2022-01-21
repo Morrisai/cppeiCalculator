@@ -22,7 +22,7 @@ import Alert from './Alert';
 const styles = theme =>( {
     paper: {    
       padding: '3rem',
-      maxWidth: '75%',
+      maxWidth: '90%',
       margin:'2rem auto',     
 
       "@media (max-width:500px)": {
@@ -44,11 +44,11 @@ const styles = theme =>( {
     },
     section:{
         marginTop:'2rem',
-        maxWidth:'50%',
+        maxWidth:'90%',
         margin: 'auto' ,
         textAlign:'center',
         
-        "@media (max-width:500px)": {           
+        "@media (max-width:700px)": {           
             maxWidth:'100%',
             padding:'1rem'
         }
@@ -205,7 +205,7 @@ class Form extends React.Component{
         const { classes } = this.props
 
        return( 
-           <div  className={classes.root}>           
+           <div  className={classes.root} id="calculator">           
             <section className={classes.section}>            
             <Typography variant="display2" gutterBottom  >Calculator</Typography>    
             <Typography variant="body1" >If you get paid a regular amount every so often and know how much you will make this year use the first field otherwise use Year To Date if you want to see how bonuses or other irregular payments affect the timing</Typography>
